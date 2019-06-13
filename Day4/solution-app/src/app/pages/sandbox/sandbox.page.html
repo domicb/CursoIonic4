@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Sandbox
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h1>Expandable contents</h1>
+
+  <app-expandable-content title="Title1"
+                          (change)="expandableContentChanged($event)">
+    Content1
+  </app-expandable-content>
+
+  <app-expandable-content title="Title2"
+                          (change)="expandableContentChanged($event)">
+    Content2
+  </app-expandable-content>
+
+  <app-expandable-content title="Title3"
+                          (change)="expandableContentChanged($event)">
+    Content3
+  </app-expandable-content>
+
+  <app-expandable-content title="Title4"
+                          (change)="expandableContentChanged($event)">
+    Content4
+  </app-expandable-content>
+
+  <p>Number of expanded: {{ numExpanded }}</p>
+
+  <h1>Ratings</h1>
+
+  <app-rating (vote)="voteSubmitted($event)"></app-rating>
+
+  <app-rating [upVotes]="1"
+              (vote)="voteSubmitted($event)"></app-rating>
+
+  <app-rating [downVotes]="2"
+              (vote)="voteSubmitted($event)"></app-rating>
+
+  <app-rating [upVotes]="3"
+              [downVotes]="1"
+              (vote)="voteSubmitted($event)"></app-rating>
+
+  <p>Up votes sum: {{ upVotesSum }}</p>
+
+  <p>Down votes sum: {{ downVotesSum }}</p>
+
+</ion-content>

@@ -1,0 +1,11 @@
+<ion-button icon-start color="success" (click)="upVote()">
+  <ion-icon name="thumbs-up"></ion-icon>
+  &nbsp;{{ upVotes }}
+</ion-button>
+<ion-button icon-start color="danger" (click)="downVote()">
+  <ion-icon name="thumbs-down"></ion-icon>
+  &nbsp;{{ downVotes }}
+</ion-button>
+<div margin-top>
+  {{ votesAverage.toFixed(1) }} / 10
+</div>

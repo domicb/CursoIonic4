@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{ fruit.name }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <img class="image"
+       src="assets/images/fruits/{{ fruit.image }}"/>
+  <p>{{ fruit.description }}</p>
+  <p>
+    <a *ngIf="fruit.link"
+       [href]="fruit.link"
+       target="_blank">More info</a>
+  </p>
+</ion-content>

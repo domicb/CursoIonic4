@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Restorable fruits list
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card padding *ngFor="let fruit of fruits; let i = index">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3">
+          <img class="image" src="assets/images/fruits/{{ fruit.image }}"/>
+        </ion-col>
+        <ion-col>
+          <h1>{{ fruit.name }}</h1>
+          <p>{{ fruit.description }}</p>
+          <a target="_blank" *ngIf="fruit.link" href="{{ fruit.link }}">More info</a>
+        </ion-col>
+        <ion-col size="2">
+          <ion-button color="danger" (click)="deleteFruit(i)">
+            <ion-icon name="trash"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar text-center>
+    <ion-button color="secondary" [disabled]="!isRestoreAllowed"
+                (click)="restoreFruits()">
+      Restore
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Details of {{ item.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-icon [name]="item.icon" class="big-icon"></ion-icon>
+  <p>{{ item.title }}</p>
+  <p>{{ item.note }}</p>
+</ion-content>

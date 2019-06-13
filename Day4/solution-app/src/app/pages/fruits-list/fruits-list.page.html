@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Fruits list
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <app-expandable-content *ngFor="let fruit of fruits" [title]="fruit.name">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3">
+          <img [src]="'assets/images/fruits/' + fruit.image"/>
+        </ion-col>
+        <ion-col>
+          <p>{{ fruit.description }}</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div text-right>
+      <ion-button [routerLink]="'/fruit-details/' + fruit.id">View details</ion-button>
+    </div>
+  </app-expandable-content>
+</ion-content>

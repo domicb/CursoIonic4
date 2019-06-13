@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{ 'home.title' | translate }}
+      
+      <p>
+        <span>{{ 'helloName' | translate: {name: 'world'} }}</span>
+      </p>
+      <p>
+        <span translate [translateParams]="{name: 'world'}">helloName</span>
+      </p>
+      <p>
+        <ion-button (click)="presentSayHello()">Say hello</ion-button>
+      </p>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+ <p>
+    {{ 'Hi' | uppercase }}
+ </p>
+
+ <p>
+  {{ currentDate | date:'dd/MM/yyyy' }}
+</p>
+
+<p>
+  {{ 123.3435 | number:'1.2-2' }}
+</p>
+
+<p>
+  {{ 123.34353242 | number:'3.4-5' }}
+</p>
+
+<h1>Custom pipes</h1>
+
+<p>
+   {{'title' | translate }}
+</p>
+
+  <ion-button (click)="presentToast()">Toast</ion-button>
+
+  <p>
+    <span translate>
+        hello
+    </span>
+  </p>
+  <p>
+    <span translate="hello"></span>
+  </p>
+  <p>
+    <span translate>helloName</span>
+  </p>
+</ion-content>

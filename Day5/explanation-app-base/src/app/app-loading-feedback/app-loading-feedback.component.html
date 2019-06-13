@@ -1,0 +1,26 @@
+<!--premiere submit y no form-->
+<form [formGroup]="form" (submit)="submitForm()">
+  <ion-item>
+    <!--importar reactiveformmodule-->
+    <ion-label></ion-label>
+    <ion-input formControlName="name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label></ion-label>
+    <ion-select formControlName="sex">
+      <ion-select-option value="male">Male</ion-select-option>
+      <ion-select-option value="female">Female</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Phone</ion-label>
+    <ion-input formControlName="phone" type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Email</ion-label>
+    <ion-input formControlName="email" type="email"></ion-input>
+  </ion-item>
+  <div margin text-right>
+    <ion-button type="submit">Submit</ion-button>
+  </div>
+</form>

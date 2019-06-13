@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Template driven form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<form action="">
+  <ion-item>
+    <ion-item>
+    <ion-label position="floating">Name</ion-label>
+    <!--ngModel planifica los valores del modelo identificandolo por el nombre de la propiedad-->
+
+      <ion-input name="name" [(ngModel))]="nameValue"></ion-input>
+    </ion-item>
+  </ion-item>
+</form>
+<h1 [hidden]="!nameValue">Hello {{nameValue}}</h1>
+</ion-content>
